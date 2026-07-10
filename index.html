@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slideshow Servizi Fotografici</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans:wght@300;400;600&display=swap');
+    
+    /* Sfondo completamente trasparente per html e body */
+    html, body {
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        background: transparent;
+        color: #f4f4f4; /* Colore del testo chiaro, ideale per sfondi scuri */
+        font-family: 'Open Sans', sans-serif;
+        overflow-x: hidden;
+    }
+    
+    .slideshow-container {
+        position: relative;
+        max-width: 1050px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+        background: transparent;
+    }
+
+    .slide {
+        display: none;
+        width: 100%;
+        animation: fade 1.2s ease-in-out;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+    }
+
+    .slide-image {
+        flex: 1;
+        min-width: 280px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .slide-image img {
+        width: 100%;
+        height: auto;
+        max-height: 550px;
+        object-fit: cover;
+        border-radius: 2px;
+        box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+    }
+
+    .slide-text {
+        flex: 1.2;
+        min-width: 320px;
+        padding: 40px;
+        box-sizing: border-box;
+    }
+
+    .slide-text h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.4rem;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 18px;
+        color: #ffffff;
+        letter-spacing: 0.5px;
+    }
+
+    .slide-text .main-desc {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #dddddd;
+        margin-bottom: 25px;
+        font-weight: 300;
+    }
+
+    .services-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .services-list li {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #cccccc;
+        margin-bottom: 16px;
+    }
+
+    .services-list li strong {
+        color: #ffffff;
+        font-weight: 600;
+        display: inline;
+    }
+
+    /* Frecce di navigazione */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 14px 18px;
+        margin-top: -25px;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: bold;
+        font-size: 22px;
+        transition: 0.3s ease;
+        border-radius: 50%;
+        user-select: none;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+    
+    .next { right: 10px; }
+    .prev { left: 10px; }
+    
+    .prev:hover, .next:hover { 
+        background-color: rgba(255, 255, 255, 0.2); 
+        color: #ffffff;
+    }
+
+    @keyframes fade {
+        from { opacity: 0.3; } 
+        to { opacity: 1; }
+    }
+
+    /* Ottimizzazione Mobile e Tablet */
+    @media (max-width: 820px) {
+        .slideshow-container {
+            padding: 40px 20px;
+        }
+        .slide { 
+            flex-direction: column; 
+        }
+        .slide-image {
+            width: 100%;
+            max-width: 450px;
+            padding: 10px;
+        }
+        .slide-text { 
+            width: 100%;
+            padding: 30px 10px 10px 10px; 
+            text-align: left;
+        }
+        .slide-text h2 {
+            font-size: 2rem;
+        }
+        .prev, .next {
+            top: auto;
+            bottom: 10px;
+            margin-top: 0;
+        }
+        .prev { left: 35%; }
+        .next { right: 35%; }
+    }
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+    <div class="slide" style="display: flex;">
+        <div class="slide-image">
+            <img src="https://via.placeholder.com/500x650/333333/ffffff?text=Ritratto+Moda+Editoriale" alt="Ritratto, Moda & Editoriale">
+        </div>
+        <div class="slide-text">
+            <h2>Ritratto, Moda & Editoriale</h2>
+            <p class="main-desc">Un'immagine forte e distintiva è fondamentale per emergere. Realizzo ritratti che uniscono l'estetica editoriale all'autenticità del soggetto, ideali per pubblicazioni, personal branding e campagne creative.</p>
+            <ul class="services-list">
+                <li><strong>Ritratto Editoriale:</strong> Shooting in location o in studio, pensati per riviste, musicisti, artisti e creativi che necessitano di un'immagine non convenzionale.</li>
+                <li><strong>Moda & Lookbook:</strong> Produzione visiva per brand emergenti, designer e campagne social, curando l'illuminazione e il mood per esaltare i capi e l'identità del marchio.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="slide-image">
+            <img src="https://via.placeholder.com/500x650/333333/ffffff?text=Eventi+e+Cerimonie" alt="Eventi Privati e Cerimonie">
+        </div>
+        <div class="slide-text">
+            <h2>Eventi Privati e Cerimonie</h2>
+            <p class="main-desc">Custodisco i ricordi dei tuoi momenti più importanti con un approccio reportagistico, discreto e spontaneo. Nessuna posa forzata, solo emozioni autentiche.</p>
+            <ul class="services-list">
+                <li><strong>Reportage di Matrimonio:</strong> Un racconto completo ed elegante del tuo giorno speciale, dalla preparazione ai festeggiamenti, catturando la naturalezza di ogni istante.</li>
+                <li><strong>Feste Private e Compleanni:</strong> Servizi fotografici per diciottesimi, feste di laurea, anniversari e celebrazioni esclusive a Milano e provincia.</li>
+                <li><strong>Engagement e Ritratto di Famiglia:</strong> Sessioni fotografiche intime e rilassate, in esterna o a domicilio, per celebrare fidanzamenti, gravidanze o semplicemente un momento speciale.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="slide-image">
+            <img src="https://via.placeholder.com/500x650/333333/ffffff?text=Interni+e+Architettura" alt="Fotografia di Interni e Architettura">
+        </div>
+        <div class="slide-text">
+            <h2>Fotografia di Interni e Architettura</h2>
+            <p class="main-desc">Valorizzare gli spazi richiede occhio per le geometrie e una profonda comprensione della luce. Un servizio dedicato a chi ha bisogno di mostrare l'anima di un ambiente con precisione e stile.</p>
+            <ul class="services-list">
+                <li><strong>Real Estate & Hôtellerie:</strong> Immagini luminose e accattivanti per agenzie immobiliari, boutique hotel e host Airbnb per massimizzare le prenotazioni.</li>
+                <li><strong>Studi di Architettura:</strong> Documentazione di fine cantiere o di progetti di interior design, con un'attenzione maniacale ai dettagli, agli arredi e all'illuminotecnica.</li>
+                <li><strong>Spazi Commerciali:</strong> Ristoranti, uffici e showroom che vogliono trasmettere l'atmosfera del proprio locale.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="slide-image">
+            <img src="https://via.placeholder.com/500x650/333333/ffffff?text=Corporate+Photography" alt="Fotografia Corporate e Reportage Aziendale">
+        </div>
+        <div class="slide-text">
+            <h2>Fotografia Corporate e Reportage Aziendale</h2>
+            <p class="main-desc">L'immagine della tua azienda raccontata con professionalità. Dalla valorizzazione del team alla documentazione dei grandi eventi milanesi, offro soluzioni visive studiate per la comunicazione aziendale.</p>
+            <ul class="services-list">
+                <li><strong>Corporate Headshots & Team:</strong> Ritratti professionali singoli e di gruppo presso la vostra sede. Ideali per profili LinkedIn, siti web e rassegne stampa.</li>
+                <li><strong>Eventi Corporate e PR:</strong> Copertura fotografica per lanci di prodotto, meeting, conferenze, cene di gala e fiere di settore.</li>
+                <li><strong>Corporate Storytelling:</strong> Un racconto visivo della vita aziendale, degli spazi di lavoro e dei processi produttivi per rafforzare la brand identity.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="slide-image">
+            <img src="https://via.placeholder.com/500x650/333333/ffffff?text=Book+Modelli+e+Attori" alt="Book Fotografico per Modelli e Attori">
+        </div>
+        <div class="slide-text">
+            <h2>Book Fotografico per Modelli e Attori</h2>
+            <p class="main-desc">Un portfolio solido è il tuo miglior biglietto da visita per agenzie e casting. Costruiamo insieme un comp card che mostri la tua reale versatilità.</p>
+            <ul class="services-list">
+                <li><strong>Aggiornamento Portfolio / Test Shoots:</strong> Shooting mirati per rinnovare il book con look freschi e in linea con le tendenze attuali.</li>
+                <li><strong>Polaroid/Digitals:</strong> Scatti naturali e senza filtri, esattamente come richiesti dai casting director delle agenzie milanesi.</li>
+                <li><strong>Esplorazione per Attori:</strong> Un lavoro specifico sulle micro-espressioni per coprire i diversi ruoli (typecasting) per cui ti proponi.</li>
+            </ul>
+        </div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideIndex-1].style.display = "flex";  
+    }
+</script>
+
+</body>
+</html>
